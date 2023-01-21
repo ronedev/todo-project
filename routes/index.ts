@@ -1,4 +1,5 @@
 import express from "express";
+import { getAllUserWhitTheirTasks, getUserByIdWhitTheirTasks } from './../controllers/UserController';
 import {getAllTasks, getTaskByUser} from "../controllers/TaskController"
 
 export const router = express.Router();
@@ -8,29 +9,11 @@ router.get("/", (req, res) => {
   res.send("Welcome to todo-proyect backend!");
 });
 
-// //Getting all users and their tasks
-// router.get("/users", async (req, res) => {
-//   await prisma.$connect();
-//   const allUsers = await prisma.user.findMany({
-//     include: {
-//       tasks: true,
-//     },
-//   });
-//   res.json(allUsers);
-// });
+//Getting all users and their tasks
+router.get("/users", getAllUserWhitTheirTasks);
 
-// //Getting one user and their tasks
-// router.get("/users/:id", async (req, res) => {
-//   const { id } = req.params;
-//   await prisma.$connect();
-//   const user = await prisma.user.findUnique({
-//     where: { id },
-//     include: {
-//       tasks: true,
-//     },
-//   });
-//   res.json(user);
-// });
+//Getting one user and their tasks
+router.get("/user/:id", getUserByIdWhitTheirTasks);
 
 //Getting all tasks
 router.get("/tasks", getAllTasks);
