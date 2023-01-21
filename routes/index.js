@@ -15,8 +15,11 @@ exports.router.get("/", (req, res) => {
 //Getting all users and their tasks
 exports.router.get("/users", UserController_1.getAllUserWhitTheirTasks);
 //Getting one user and their tasks
-exports.router.get("/users/:id", UserController_1.getUserByIdWhitTheirTasks);
+exports.router.get("/user/:id", UserController_1.getUserByIdWhitTheirTasks);
 //Getting all tasks
 exports.router.get("/tasks", TaskController_1.getAllTasks);
 //Getting all tasks from a user
 exports.router.get("/tasks/:userId", TaskController_1.getTaskByUser);
+//Update task
+//Delete task
+//Delete all tasks
