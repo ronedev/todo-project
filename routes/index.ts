@@ -20,3 +20,9 @@ router.get("/tasks", getAllTasks);
 
 //Getting all tasks from a user
 router.get("/tasks/:userId", getTaskByUser);
+
+//Update task
+
+//Delete task
+
+//Delete all tasks
