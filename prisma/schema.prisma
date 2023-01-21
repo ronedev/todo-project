@@ -1,11 +1,12 @@
 generator client {
   provider = "prisma-client-js"
-  enableManagementApi = true
+  previewFeatures = ["referentialIntegrity"]
 }
 
 datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
 }
 
 model Task{
